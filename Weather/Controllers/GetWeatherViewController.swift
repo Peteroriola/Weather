@@ -8,13 +8,29 @@
 
 import UIKit
 
+//MARK:-
+
+protocol ChangeCityDelegate {
+    func userEnteredANewCityName(city: String)
+}
+
 class GetWeatherViewController: UIViewController {
 
+    
+    var delegate : ChangeCityDelegate?
     
     @IBOutlet weak var getCityTextField: UITextField!
     
     @IBAction func getCityWeatherPressed(_ sender: AnyObject) {
+        
+        let cityName = getCityTextField.text!
+        
+        delegate?.userEnteredANewCityName(city: cityName)
+        
+        //self.dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
     }
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 

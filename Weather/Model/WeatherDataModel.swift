@@ -15,6 +15,7 @@ class WeatherDataModel: UIViewController {
     var condition : Int = 0
     var city : String = ""
     var weatherIconName = ""
+    var weatherDescription = ""
     
     
     override func viewDidLoad() {
